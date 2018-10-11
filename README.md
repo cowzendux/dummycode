@@ -1,4 +1,4 @@
-#dummycode
+# dummycode
 
 SPSS Python Extension function to automatically create dummy codes
 
@@ -6,11 +6,11 @@ This function takes a categorical variable (which can be coded as either a numer
 
 This and other SPSS Python Extension functions can be found at http://www.stat-help.com/python.html
 
-##Usage
+## Usage
 **dummycode(variable)**
 * "variable" is the name of the categorical varaible to be dummy coded.
 
-##Example
+## Example
 **dummycode("race")**
 * Assuming race was coded ("White", "Black", "Hispanic", "Other"), the function would create a set of 3 dummy codes (race_1, race_2, race_3) with the following values.
   * race_1 has a value of 1 if race = "Black", but has a value of 0 otherwise
