@@ -1,3 +1,4 @@
+* Encoding: UTF-8.
 * Python function to automatically create dummy codes
 * Written by Jamie DeCoster
 
@@ -12,6 +13,7 @@
    Added variable and value labels to dummy codes
    Had dummycodes start numbering at 1
 * 2012-09-07 Fixed an error with string variables
+* 2019-03-21 Added option to produce all dummy codes (instead of n-1)
 
 set printback=off.
 begin program python.
@@ -22,7 +24,7 @@ def getVariableIndex(variable):
       if (variable.upper() == spss.GetVariableName(t).upper()):
          return(t)
 
-def dummycode(variable):
+def dummycode(variable, refCode = False):
 
 ##########
 # Obtain a list of all the possible values
@@ -68,8 +70,11 @@ SET Tnumbers=Labels.""" %(variable)
 ############
 
    stem = variable[0:4] + "_"
-
-   for t in range(len(values)-1):
+   
+   ncodes = len(values)-1
+   if (refCode == True):
+      ncodes = len(values)
+   for t in range(ncodes):
       dummyname = stem+str(t+1)
       submitstring = """numeric %s (f8.0).
 do if (%s = %s).
