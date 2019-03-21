@@ -7,8 +7,9 @@ This function takes a categorical variable (which can be coded as either a numer
 This and other SPSS Python Extension functions can be found at http://www.stat-help.com/python.html
 
 ## Usage
-**dummycode(variable)**
+**dummycode(variable, refCode = False)**
 * "variable" is the name of the categorical varaible to be dummy coded.
+* "refCode" indicates whether or not you want the function to include a dummy code for the reference group. By default, the function will only provide a collection of n-1 independent codes, omitting the code for the reference group. The reference group code is linearly dependent on the other codes and must be omitted from categorical analyses for the models to run. You may want to create this code if you plan on running multiple analyses using different reference groups in each analysis.
 
 ## Example
 **dummycode("race")**
