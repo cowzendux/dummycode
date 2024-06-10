@@ -17,3 +17,4 @@ This and other SPSS Python Extension functions can be found at http://www.stat-h
   * race_1 has a value of 1 if race = "Black", but has a value of 0 otherwise
   * race_2 has a value of 1 if race = "Hispanic", but has a value of 0 otherwise
   * race_3 has a value of 1 if race = "Other", but has a value of 0 otherwise
+* The dummycode for "Other" would be excluded.
